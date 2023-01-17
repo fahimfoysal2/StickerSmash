@@ -10,9 +10,7 @@ export default function ImageViewer({imageSource}) {
 
 const styles = StyleSheet.create({
     imageContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        marginVertical: 20,
     },
     background: {
         width: 320,
