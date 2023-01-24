@@ -1,4 +1,5 @@
 import { Pressable, View, Text, StyleSheet } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 export default function Button({ label, type }) {
 
@@ -20,6 +21,7 @@ export default function Button({ label, type }) {
     return (
         <View style={styles.buttonContainer}>
             <Pressable style={buttonStyle} onPress={()=> alert("Button Pressed!")} >
+                {type === 'imagePicker' && <FontAwesome5 name="image" size={18} color="#000" style={styles.buttonIcon} />}
                 <Text style={buttonLabelStyle}>{label}</Text>
             </Pressable>
         </View>
@@ -39,6 +41,7 @@ const styles = StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         justifyContent: 'center',
+        flexDirection: 'row',
     },
     buttonLabel: {
         color: '#fff',
@@ -55,5 +58,7 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 16,
     },
-
+    buttonIcon: {
+        marginRight: 10,
+    },
 });
